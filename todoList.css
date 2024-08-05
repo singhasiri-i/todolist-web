@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box; /* ทำให้ของไม่เกินออกนอกกล่องใหญ่ ของข้างในจะถูกบีบเข้า */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* อยากให้กล่องอยู่ตรงกลางจอพอดีต้องใส่ความสูงให้ body ด้วย */
+    margin: 0px; /* ทำเพื่อให้มัน scroll mouse ไม่ได้แล้ว */
+    background-color: bisque;
+}
+
+.container {
+    /* อยากให้คำว่า To do list อยู่ตรงกลาง 
+    แกน y(justfy-content), x(align-items) เพราะ direction เป็นแนวตั้ง*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 500px;
+    height: 500px;
+}
+
+.inputSection {
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+
+.todoInput {
+    flex: 1; /* อยากให้ตัว input ใหญ่เต็มกรอบ ต้องกำหนดให้ parent มัน display=flex ด้วย */
+    border: 2px solid brown;
+    border-radius: 50px 0 0 50px;
+    padding: 10px; /* เว้นระยะจากตัวหนังสือใน input กับขอบ */
+    font-size: 20px;
+}
+
+.addButton {
+    border: 1px solid brown;
+    border-radius: 0 50px 50px 0;
+    width: 80px;
+    color: white;
+    background-color: brown;
+}
+
+.listContainer {
+    width: 100%;
+    padding: 0 30px;
+}
+
+li {
+    display: flex; /* ทำให้ list กับ icon กากบาทอยู่บรรทัดเดียวกัน */
+    align-items: center; /* ทำให้ list กับ icon กากบาทอยู่ในระนาบเดียวกัน */
+    justify-content: space-between;
+
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-style:  none none solid none; /* ทำให้มีขีดเส้นใต้ list ที่เพิ่ม */
+    list-style-type: none; /* เอาจุดๆหน้า list ออก */
+
+    cursor: pointer;
+}
+
+li:hover {
+    transform: scale(1.01); /* เวลาชี้ที่ list อยากให้มันขยายใหญ่หน่อย */
+}
+
+.crossOver {
+    text-decoration: line-through; /* พอคลิกแล้วให้ขีดฆ่า list นั้น */
+}
